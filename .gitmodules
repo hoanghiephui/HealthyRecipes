@@ -1,0 +1,3 @@
+[submodule "base-mvp-android"]
+	path = base-mvp-android
+	url = https://github.com/hoanghiephui/base-mvp-android.git

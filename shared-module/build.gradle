@@ -1,13 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-
-
-
+    compileSdkVersion project.TARGET_SDK_VERSION
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 26
+        minSdkVersion project.MINIMUM_SDK_VERSION
+        targetSdkVersion project.TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
 
@@ -22,13 +19,30 @@ android {
         }
     }
 
+    //fixed duplicate lib
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion "$compat_version"
+                }
+            }
+
+            if (requested.group == 'com.google.android.gms') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion "$firebase_version"
+                }
+            }
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$compat_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation project(':realmmvp')
 }

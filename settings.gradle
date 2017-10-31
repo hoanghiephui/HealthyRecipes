@@ -1,1 +1,2 @@
-include ':mobile', ':tv', ':shared-module'
+include ':mobile', ':tv', ':shared-module', 'realmmvp'
+project(":realmmvp").projectDir = new File("base-mvp-android/realmmvp")
