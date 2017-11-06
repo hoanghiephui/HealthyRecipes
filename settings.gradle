@@ -1,2 +1,2 @@
-include ':mobile', ':tv', ':shared-module', 'realmmvp'
+include ':mobile', ':tv', ':shared-module', 'realmmvp', ':libbanner'
 project(":realmmvp").projectDir = new File("base-mvp-android/realmmvp")

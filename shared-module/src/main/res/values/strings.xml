@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">shared-module</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="slide_1_title">Welcome to Food Recipes!</string>
+    <string name="slide_1_desc">Introducing Yonia, with more than 6 thousand receipes and amazing features yonia is your best choice to make any cook great.</string>
+    <string name="start">Start</string>
+    <string name="search_hint">Search for receipes</string>
+    <string name="more">See more</string>
+    <string name="special">Ramadan special</string>
+    <string name="chief_follow">Chief following</string>
+    <string name="food_stories">Food Stories</string>
+    <string name="for_vegetarians">For vegetarians</string>
+    <string name="cookbook">Cookbook official chef</string>
+    <string name="no_cooking_find">No cooking found</string>
 </resources>
